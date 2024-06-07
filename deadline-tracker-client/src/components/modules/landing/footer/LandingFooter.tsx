@@ -2,6 +2,7 @@ import IconCustom from "./IconCustom";
 import Widget from "./Widget";
 import SectionIntro from "./SectionIntro";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 export default function LandingFooter() {
   return (
     <section
@@ -21,9 +22,15 @@ export default function LandingFooter() {
               Incidunt iure ratione deleniti natus, nisi voluptate ipsam.
             </p>
             <div className="flex gap-2 my-2 ">
-              <IconCustom src="/twitter.svg" alt="" />
-              <IconCustom src="/facebook.svg" alt="" />
-              <IconCustom src="/instagram.svg" alt="" />
+              <Link href="#">
+                <IconCustom src="/twitter.svg" alt="" />
+              </Link>
+              <Link href="#">
+                <IconCustom src="/facebook.svg" alt="" />
+              </Link>
+              <Link href="#">
+                <IconCustom src="/instagram.svg" alt="" />
+              </Link>
             </div>
           </Widget>
           <Widget>

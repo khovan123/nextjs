@@ -8,7 +8,7 @@ export default function LandingMain() {
     <section
       className={cn("w-full h-screen snap-start shrink-0 place-items-center")}
     >
-      <main className="flex flex-col items-center justify-center gap-8 mx-40 py-6">
+      <main className="flex flex-col items-center justify-center gap-10 mx-40 py-10 h-full">
         <SectionAboutUs />
         <SectionTestimonial />
       </main>

@@ -19,22 +19,22 @@ import {
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Facebook",
-    href: "/docs/primitives/alert-dialog",
+    href: "#",
     description: "Providing...",
   },
   {
     title: "Instagram",
-    href: "/docs/primitives/hover-card",
+    href: "#",
     description: "Providing...",
   },
   {
     title: "Progress",
-    href: "/Twitter",
+    href: "#",
     description: "Providing...",
   },
   {
     title: "Youture",
-    href: "/docs/primitives/scroll-area",
+    href: "/#",
     description: "Providing...",
   },
 ];
@@ -51,7 +51,7 @@ export function LandingNavigation() {
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <a
+                  <Link
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
@@ -64,16 +64,16 @@ export function LandingNavigation() {
                       check and update your task from source. Having meeting
                       with friends and some other features which you can visit!
                     </p>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
+              <ListItem href="#" title="Introduction">
                 Providing...
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
+              <ListItem href="#" title="Installation">
                 Providing...
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
+              <ListItem href="#" title="Typography">
                 Providing...
               </ListItem>
             </ul>
@@ -98,7 +98,7 @@ export function LandingNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="#" legacyBehavior passHref>
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
