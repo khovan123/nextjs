@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function LandingIntro() {
+export default function SectionIntro() {
   return (
     <section className="bg-slate-800 w-full">
-      <div className="flex justify-around items-center mx-40 h-40 px-32">
+      <div className="flex justify-around items-center mx-48 h-40">
         <div className="text-gray-100 flex flex-col gap-2 justify-center items-start">
           <h1 className="text-3xl font-semibold">
             Newsletter - Stay tune and get the latest update
@@ -19,9 +20,9 @@ export default function LandingIntro() {
             name="email"
             id="email"
           />
-          <Button className="p-0 h-0">
+          <Link href="">
             <Image src="/assets/send.png" alt="" width={15} height={15} />
-          </Button>
+          </Link>
         </div>
       </div>
     </section>

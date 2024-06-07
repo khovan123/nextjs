@@ -6,9 +6,9 @@ export default function IconCustom({ src, alt }) {
     <Image
       src={src}
       alt={alt}
-      width={50}
-      height={50}
-      className="bg-slate-500 p-4 rounded-lg"
+      width={40}
+      height={40}
+      className="bg-slate-500 p-3 rounded-lg"
     />
   );
 }
