@@ -1,7 +1,7 @@
 "use client";
-import { IDealine } from "@/components/interfaces/data";
+import { IDeadline } from "@/components/interfaces/data";
 import { Button } from "@/components/ui/button";
-import { getRemainingTime } from "@/utils/Helper/remainingTime";
+import { getRemainingTime, sortByTime } from "@/utils/Helper/remainingTime";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -15,16 +15,19 @@ import {
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
+import { DeadlineForm } from "../common/DeadlineForm";
 type DeadlineTableProps = {
-  data: IDealine[];
+  data: IDeadline[];
 };
 
 const DeadlineTable: React.FC<DeadlineTableProps> = ({ data }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [selectedItem, setSelectedItem] = useState<IDeadline | null>(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
-    }, 60000); // Update every minute
+    }, 60000);
 
     return () => clearInterval(timer);
   }, []);
@@ -45,38 +48,42 @@ const DeadlineTable: React.FC<DeadlineTableProps> = ({ data }) => {
         return "";
     }
   };
+
   return (
     <section className="overflow-x-hidden">
-      <table className="w-full border border-gray-700 table-auto">
+      <table className="w-full table-auto">
         <thead>
-          <tr>
+          <tr className="bg-slate-700">
             {headers.map((header) => (
               <th
                 key={header}
-                className="px-4 py-2 border-b border-gray-700 text-gray-200 capitalize text-left bg-slate-700"
+                className={cn(
+                  "px-4 py-2 text-gray-200 capitalize text-left ",
+                  header === "title" && "rounded-l-lg"
+                )}
               >
                 {header.replace(/_/g, " ").replace(/\b\w/g, (char) => char)}
               </th>
             ))}
             <th
               key="remaining-time"
-              className="px-4 py-2 border-b border-gray-700 text-gray-200 capitalize text-left bg-slate-700"
+              className="px-4 py-2  text-gray-200 capitalize text-left"
             >
               Remaining
             </th>
-            <th className="px-4 py-2 border-b border-gray-700 text-gray-200 capitalize text-left bg-slate-700"></th>
+            <th className="px-4 py-2 text-gray-200 capitalize text-left rounded-r-lg"></th>
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
+          {sortByTime(data).map((item) => (
+            <tr key={item.id} className="border-b border-gray-700">
               {headers.map((header) => {
-                const value = item[header as keyof IDealine];
+                const value = item[header as keyof IDeadline];
                 return (
                   <td
                     key={header}
                     className={cn(
-                      "px-4 py-4 border-b border-gray-700 text-gray-200 capitalize text-left ",
+                      "px-4 py-4  text-gray-200 capitalize text-left ",
                       { [getStyleStatus(item.status)]: header === "status" }
                     )}
                   >
@@ -86,24 +93,46 @@ const DeadlineTable: React.FC<DeadlineTableProps> = ({ data }) => {
               })}
               <td
                 key="remaining-time"
-                className="px-4 py-4 border-b border-gray-700 text-gray-200 capitalize text-left "
+                className="px-4 py-4  text-gray-200 capitalize text-left "
               >
                 {getRemainingTime(
-                  new Date(currentTime),
+                  new Date(item.time_start),
                   new Date(item.time_end)
                 )}
               </td>
-              <td className="px-4 py-4 border-b border-gray-700 text-gray-200 capitalize text-left font-medium flex justify-center items-center w-fit">
+              <td className="px-4 py-4  text-gray-200 capitalize text-left font-medium flex justify-center items-center">
                 <div className="flex gap-3">
-                  <Button className="flex justify-center items-center gap-2 px-4 bg-blue-600 hover:bg-blue-700">
-                    <Image
-                      src="/assets/edit.png"
-                      width={25}
-                      height={25}
-                      alt=""
-                    />
-                    <span>Edit</span>
-                  </Button>
+                  <Dialog
+                    open={selectedItem === item}
+                    onOpenChange={(isOpen) => {
+                      if (!isOpen) setSelectedItem(null);
+                    }}
+                  >
+                    <DialogTrigger asChild>
+                      <Button
+                        className="flex justify-center items-center gap-2 bg-blue-600 px-3 hover:bg-blue-700"
+                        onClick={() => setSelectedItem(item)}
+                      >
+                        <Image
+                          src="/assets/edit.png"
+                          width={25}
+                          height={25}
+                          alt=""
+                        />
+                        <span>Edit</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Edit</DialogTitle>
+                      </DialogHeader>
+                      <DeadlineForm
+                        data={item}
+                        onClose={() => setSelectedItem(null)}
+                      />
+                    </DialogContent>
+                  </Dialog>
+
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button className="flex justify-center items-center gap-2 bg-red-600 px-2 hover:bg-red-700">

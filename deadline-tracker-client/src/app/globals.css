@@ -8,7 +8,6 @@
 }
 html,
 body {
-  overflow: hidden;
   height: 100%;
   @apply font-sans;
 }

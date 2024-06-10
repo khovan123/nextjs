@@ -5,9 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 export default function LandingFooter() {
   return (
-    <section
-      className={cn("w-full h-screen snap-start  shrink-0 place-items-center")}
-    >
+    <section className={cn("w-full h-screen place-items-center")}>
       <footer className="h-full flex flex-col justify-between items-center">
         <SectionIntro />
         <div className="mx-56 grid grid-cols-4 items-start justify-items-center pb-36">

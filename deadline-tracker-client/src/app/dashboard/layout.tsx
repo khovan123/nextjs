@@ -11,7 +11,7 @@ export default function DashBoardLayOut({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="bg-slate-800 w-screen h-screen overflow-hidden">
+    <section className="bg-slate-800 w-screen h-screen overflow-x-hidden">
       <div className="grid h-full grid-rows-[auto_1fr] grid-cols-[auto_1fr]">
         <header className="flex justify-between items-center py-3 pr-6 border-b border-gray-700 col-span-2">
           <div className="flex gap-2 justify-center items-center w-full ml-2">
@@ -25,9 +25,12 @@ export default function DashBoardLayOut({
                 />
               </div>
             </Button>
-            <span className="text-gray-100 w-full font-semibold text-2xl">
+            <Link
+              className="text-gray-100 w-full font-semibold text-2xl"
+              href="/"
+            >
               Deadline Tracker
-            </span>
+            </Link>
           </div>
           <nav className="w-full flex justify-end items-center gap-3 ">
             <Button className="bg-transparent hover:bg-slate-700">
@@ -71,7 +74,10 @@ export default function DashBoardLayOut({
                     </Button>
                   </li>
                   <li>
-                    <Button className="w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 ">
+                    <Button
+                      className="w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 "
+                      // disabled
+                    >
                       <Link
                         href="/dashboard/deadline/group"
                         className="px-12 py-2 text-base font-normal flex gap-3"
@@ -140,9 +146,7 @@ export default function DashBoardLayOut({
           </ul>
         </nav>
         <main className="bg-slate-900 pt-4 px-4 w-full">
-          <div className="w-full h-full bg-slate-800 rounded-t-md">
-            {children}
-          </div>
+          <div className="w-full h-full ">{children}</div>
         </main>
       </div>
     </section>
