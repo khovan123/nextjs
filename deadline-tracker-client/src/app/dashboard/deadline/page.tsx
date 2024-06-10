@@ -1,3 +1,3 @@
 export default function DeadlinePage() {
-  return;
+  return <h1>Deadline Page</h1>;
 }

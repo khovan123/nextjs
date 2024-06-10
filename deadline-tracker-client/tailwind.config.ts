@@ -79,6 +79,7 @@ export default {
       "accordion-up": "accordion-up 0.2s ease-out",
       "infinite-scroll": "infinite-scroll 25s linear infinite",
     },
+    fontFamily: { sans: ["Inter", "sans-serif"] },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

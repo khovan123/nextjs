@@ -13,17 +13,19 @@ export default function DashBoardLayOut({
   return (
     <section className="bg-slate-800 w-screen h-screen overflow-hidden">
       <div className="grid h-full grid-rows-[auto_1fr] grid-cols-[auto_1fr]">
-        <header className="flex justify-between items-center px-3 py-3 pr-6 border-b border-gray-700 col-span-2  ">
-          <div className="flex gap-2 justify-center items-center w-full">
-            <Button className="bg-transparent hover:bg-slate-700">
-              <Image
-                src="/assets/fries-menu.png"
-                alt=""
-                width={25}
-                height={25}
-              />
+        <header className="flex justify-between items-center py-3 pr-6 border-b border-gray-700 col-span-2">
+          <div className="flex gap-2 justify-center items-center w-full ml-2">
+            <Button className="bg-transparent hover:bg-slate-700 flex justify-center items-center">
+              <div className="w-10 flex justify-center items-center ">
+                <Image
+                  src="/assets/fries-menu.png"
+                  alt=""
+                  width={25}
+                  height={25}
+                />
+              </div>
             </Button>
-            <span className="text-gray-100 w-full font-semibold text-lg">
+            <span className="text-gray-100 w-full font-semibold text-2xl">
               Deadline Tracker
             </span>
           </div>
@@ -46,12 +48,12 @@ export default function DashBoardLayOut({
             </Link>
           </nav>
         </header>
-        <nav className="bg-slate-800 px-3 border-r border-gray-700 pt-6 w-64">
+        <nav className="bg-slate-800 px-2 border-r border-gray-700 pt-6 w-64">
           <ul className="flex flex-col justify-center items-start gap-3">
             <li className="w-full">
               <NavButton
                 className={
-                  "w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 text-base font-normal flex gap-3"
+                  "w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 flex gap-2 "
                 }
                 srcIcon="/assets/deadlinelist.png"
                 widthIcon={25}
@@ -61,8 +63,8 @@ export default function DashBoardLayOut({
                   <li>
                     <Button className="w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 ">
                       <Link
-                        href="/dashboard/personal"
-                        className="px-7 py-2 hover:bg-gray-700 text-base font-normal flex gap-3"
+                        href="/dashboard/deadline/personal"
+                        className="px-12 py-2 text-base font-normal flex gap-3"
                       >
                         Personal
                       </Link>
@@ -71,10 +73,10 @@ export default function DashBoardLayOut({
                   <li>
                     <Button className="w-full justify-start items-center bg-transparent py-5 hover:bg-slate-700 ">
                       <Link
-                        href="/dashboard/group"
-                        className="px-7 py-2 hover:bg-gray-700 text-base font-normal flex gap-3"
+                        href="/dashboard/deadline/group"
+                        className="px-12 py-2 text-base font-normal flex gap-3"
                       >
-                        Gruop
+                        Group
                       </Link>
                     </Button>
                   </li>
@@ -82,18 +84,20 @@ export default function DashBoardLayOut({
               </NavButton>
             </li>
             <li className="w-full">
-              <Button className="w-full justify-start bg-transparent py-5 hover:bg-slate-700">
+              <Button className="w-full bg-transparent py-5  hover:bg-slate-700">
                 <Link
                   href="/dashboard/profile"
-                  className="text-base font-normal flex gap-3 justify-start items-center"
+                  className="flex gap-2 justify-start items-center w-full"
                 >
-                  <Image
-                    src="/assets/user-account.png"
-                    alt=""
-                    width={25}
-                    height={25}
-                  />
-                  Profile
+                  <div className="w-10 flex justify-center items-center ">
+                    <Image
+                      src="/assets/user-account.png"
+                      alt=""
+                      width={25}
+                      height={25}
+                    />
+                  </div>
+                  <span className="text-base font-normal">Profile</span>
                 </Link>
               </Button>
             </li>
@@ -101,15 +105,17 @@ export default function DashBoardLayOut({
               <Button className="w-full justify-start bg-transparent py-5 hover:bg-slate-700">
                 <Link
                   href="/dashboard/inbox"
-                  className="text-base font-normal flex gap-3 justify-start items-center"
+                  className=" flex gap-2 justify-start items-center"
                 >
-                  <Image
-                    src="/assets/inbox.png"
-                    alt=""
-                    width={25}
-                    height={25}
-                  />
-                  Inbox
+                  <div className="w-10 flex justify-center items-center ">
+                    <Image
+                      src="/assets/inbox.png"
+                      alt=""
+                      width={25}
+                      height={25}
+                    />
+                  </div>
+                  <span className="text-base font-normal">Inbox</span>
                 </Link>
               </Button>
             </li>
@@ -117,15 +123,17 @@ export default function DashBoardLayOut({
               <Button className="w-full justify-start bg-transparent py-5 hover:bg-slate-700">
                 <Link
                   href="/"
-                  className="text-base font-normal flex gap-3 justify-start items-center"
+                  className="flex gap-2 justify-start items-center"
                 >
-                  <Image
-                    src="/assets/logout-square.png"
-                    alt=""
-                    width={25}
-                    height={25}
-                  />
-                  Log Out
+                  <div className="w-10 flex justify-center items-center ">
+                    <Image
+                      src="/assets/logout-square.png"
+                      alt=""
+                      width={25}
+                      height={25}
+                    />
+                  </div>
+                  <span className="text-base font-normal">Log Out</span>
                 </Link>
               </Button>
             </li>

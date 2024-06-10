@@ -80,7 +80,7 @@ export function LandingNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="rounded-none bg-transparent text-gray-200 hover:bg-transparent hover:text-gray-200 focus:bg-transparent focus:text-gray-200 dark:bg-transparent dark:hover:bg-transparent dark:focus:bg-transparent relative data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent efore:content-stretch before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-slate-200 before:w-0 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full">
+          <NavigationMenuTrigger className="rounded-none bg-transparent text-gray-200 hover:bg-transparent hover:text-gray-200 focus:bg-transparent focus:text-gray-200 dark:bg-transparent dark:hover:bg-transparent dark:focus:bg-transparent relative data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent before:content-stretch before:absolute before:bottom-0 before:left-0 before:h-[2px] before:bg-slate-200 before:w-0 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full">
             Service
           </NavigationMenuTrigger>
           <NavigationMenuContent>

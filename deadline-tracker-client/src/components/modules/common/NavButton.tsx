@@ -19,9 +19,11 @@ export default function NavButton({
     <div className="w-full">
       <Button onClick={toggleSubNav} className={cn(className)}>
         {srcIcon && (
-          <Image src={srcIcon} alt="" width={widthIcon} height={heightIcon} />
+          <div className="w-10 flex justify-center items-center ">
+            <Image src={srcIcon} alt="" width={widthIcon} height={heightIcon} />
+          </div>
         )}
-        Deadline
+        <span className="text-base font-normal">Deadline</span>
       </Button>
       {isSubNavVisible && (
         <div className="top-full mt-2 w-full transition-all duration-300">
