@@ -16,6 +16,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { DeadlineForm } from "../common/DeadlineForm";
+import { PenBoxIcon, Trash2Icon } from "lucide-react";
 type DeadlineTableProps = {
   data: IDeadline[];
 };
@@ -113,12 +114,7 @@ const DeadlineTable: React.FC<DeadlineTableProps> = ({ data }) => {
                         className="flex justify-center items-center gap-2 bg-blue-600 px-3 hover:bg-blue-700"
                         onClick={() => setSelectedItem(item)}
                       >
-                        <Image
-                          src="/assets/edit.png"
-                          width={25}
-                          height={25}
-                          alt=""
-                        />
+                        <PenBoxIcon />
                         <span>Edit</span>
                       </Button>
                     </DialogTrigger>
@@ -136,12 +132,7 @@ const DeadlineTable: React.FC<DeadlineTableProps> = ({ data }) => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button className="flex justify-center items-center gap-2 bg-red-600 px-2 hover:bg-red-700">
-                        <Image
-                          src="/assets/delete.png"
-                          width={25}
-                          height={25}
-                          alt=""
-                        />
+                        <Trash2Icon className="" />
                         <span>Delete</span>
                       </Button>
                     </DialogTrigger>

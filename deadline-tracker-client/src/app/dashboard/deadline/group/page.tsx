@@ -97,7 +97,7 @@ const data: IDeadlineGroup[] = [
 
 export default function PersonalDeadlinePage() {
   return (
-    <div className="flex flex-col gap-10 pb-4">
+    <div className="flex flex-col gap-10">
       {data.map((item, index) => {
         return (
           <div

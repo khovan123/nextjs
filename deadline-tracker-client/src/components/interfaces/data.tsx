@@ -12,6 +12,21 @@ export type IDeadlineGroup = {
   data: IDeadline[];
 };
 
+export type IUser = {
+  id: string;
+  username: string;
+  password: string;
+  name: string;
+  nickname: string;
+  DoB: Date;
+  sex: "male" | "female" | "unknow" | "other";
+  phone: string;
+  email: string;
+  address: string;
+  status: string;
+  getting_day: Date;
+};
+//🤒 🌴
 export interface IDeadlineForm {
   data: {
     title: string;

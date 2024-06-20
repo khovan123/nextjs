@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SendIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ export default function SectionIntro() {
             id="email"
           />
           <Link href="">
-            <Image src="/assets/send.png" alt="" width={15} height={15} />
+            <SendIcon className="text-gray-100" />
           </Link>
         </div>
       </div>
