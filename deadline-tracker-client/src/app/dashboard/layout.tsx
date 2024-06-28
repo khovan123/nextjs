@@ -6,12 +6,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import {
   BellIcon,
+  BookUserIcon,
   CalendarHeart,
   ClipboardList,
   LogOutIcon,
   SettingsIcon,
+  Shield,
   UserRound,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function DashBoardLayOut({
   children,
@@ -21,7 +29,7 @@ export default function DashBoardLayOut({
   const [isSubNavVisible, setIsSubNavVisible] = useState(false);
   const [isExpand, setIsExpand] = useState(false);
   const [isLockAside, setIsLockAside] = useState(false);
-
+  const [isChangeLayout, setIsChangeLayout] = useState(false);
   return (
     <section className="bg-slate-800 w-screen h-full overflow-x-hidden">
       <div className="grid h-full grid-rows-[auto_1fr] grid-cols-[auto_1fr]">
@@ -64,7 +72,7 @@ export default function DashBoardLayOut({
         <aside
           className={cn(
             "bg-slate-800 px-2 border-r border-gray-700 pt-6 flex flex-col justify-between items-center ",
-            isExpand ? "w-64" : "w-fit"
+            isExpand ? "w-52" : "w-fit"
           )}
           onPointerLeave={() => !isLockAside && setIsSubNavVisible(false)}
           onPointerOut={() => !isLockAside && setIsExpand(false)}
@@ -145,6 +153,7 @@ export default function DashBoardLayOut({
                   "bg-transparent py-2 px-2 hover:bg-slate-700",
                   isExpand && "justify-center items-center rounded-full"
                 )}
+                onClick={() => setIsChangeLayout(true)}
               >
                 <Link href="/dashboard/setting" className="w-fit">
                   <SettingsIcon />
@@ -165,6 +174,7 @@ export default function DashBoardLayOut({
             </li>
           </ul>
         </aside>
+
         <main className="bg-slate-900 py-4 px-4 w-full">
           <div className="w-full h-full ">{children}</div>
         </main>
