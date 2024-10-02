@@ -1,0 +1,62 @@
+{
+  "semester 1": {
+    "MAE101": [
+      {
+        "id": 1,
+        "title": "lab1",
+        "description": "seb",
+        "time start": "18/03/2024",
+        "time end": "18/07/2024",
+        "status": "completed"
+      }
+    ],
+    "CSI104": [
+      {
+        "id": 2,
+        "title": "lab1",
+        "description": "seb",
+        "time start": "18/03/2024",
+        "time end": "18/07/2024",
+        "status": "expired"
+      },
+      {
+        "id": 3,
+        "title": "lab2",
+        "description": "seb",
+        "time start": "18/07/2024",
+        "time end": "18/08/2024",
+        "status": "pending"
+      }
+    ]
+  },
+  "semester 2": {
+    "MAD101": [
+      {
+        "id": 1,
+        "title": "lab1",
+        "description": "seb",
+        "time start": "18/03/2024",
+        "time end": "18/07/2024",
+        "status": "completed"
+      }
+    ],
+    "OSG202": [
+      {
+        "id": 2,
+        "title": "lab1",
+        "description": "seb",
+        "time start": "18/03/2024",
+        "time end": "18/07/2024",
+        "status": "expired"
+      },
+      {
+        "id": 3,
+        "title": "lab2",
+        "description": "seb",
+        "time start": "18/07/2024",
+        "time end": "18/08/2024",
+        "status": "pending"
+      }
+    ]
+  }
+}
